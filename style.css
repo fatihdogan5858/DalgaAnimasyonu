@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+
+:root{
+--red-color:#d22731;
+
+}
+
+
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family :  'Inter', sans-serif;
+    background-color: grey;
+    display: flex;
+    justify-content: center; /*display: flex; ile kullanınca üst ortaya geldi*/
+    align-items: center;
+    height: 100vh;/*sayfa ortasına geldi*/
+    margin: 0;
+    overflow: hidden;/*kaydırma çubugu gizledi*/
+}
+
+.container {/*container olarak class yaptığımız alana işlem yapıyoruz*/
+background-color: white;
+padding: 20px 40px;/*yukarıdan aşağıya 20px sağdan sola 40px*/
+border-radius: 10px; /*köşeleri törpüler yuvarlak yapar*/
+box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.9); /*gölgenin uzaklığını ayarlar*/
+}
+
+.container h1{
+color: var(--red-color);/*  :root{ içine yazdığımız rengi burada kullandık*/
+margin-bottom: 30px; /*eba yazan yer biraz yukarı çıktı*/
+text-align: center;
+}
+
+.container a{
+    text-decoration: none;
+    color: blue; /*eba hesabı oluştur yazısı mavi oldu*/
+}
+.form-control{
+    position: relative;
+    margin: 20px 0px 40px; /*input arasını ayarlıyor*/
+}
+
+.form-control input{
+border:0; /*input çerçeve kalktı*/
+border-bottom: 2px solid #e8e8e8; /*inputun altı*/
+display: block;/*eposta ve şifre yazısı alta geldi*/
+width: 100%;/*input genişliği arttı*/
+padding: 15px; /*eposta ve şifre bölümü arası açıldı*/
+color:#333
+}
+
+/*valid geçerliliği kontrol eder misal bi email yazıldı doğrumu yanlışmı ona bakar*/
+
+.form-control input:focus,/* input focus oldumu ve form kontroldeki input valid oldumu outline i yok et ve border-bottom-colorunu #999 yap*/
+.form-control input:valid{
+    outline: none;
+    border-bottom-color:#999;
+    font-size:16px;
+/* eposta çizgisi birazdaha beyaz oldu */
+}
+
+.btn{
+    cursor:pointer; /*imleç üzerinegelince el işaretine döndü*/
+    display: inline-block;
+    width: 100%;
+    background-color: var(--red-color);/*root taki rengi aldık kırmızı oldu buton*/
+border: none;/*btn kenarlık kalktı*/
+color: white;/*giriş yazısı beyaz oldu*/
+font-size: 16px;
+padding: 15px;
+border-radius: 25px;
+font-family: inherit;/*bunu kullan dedik*/
+}
+.btn:focus{
+    outline: none;
+}
+.btn:active{
+    transform: scale(0.98);
+}
+.text{
+    font-size: 13px;
+    margin-top:30px;
+}
+.text a:hover{ /*eba hesabı olustur yazısına mause uzerine gelince gölge veriyor*/
+    text-shadow: 2px 3px 10px rgba(0,0,0,0.9);
+}
+
+.formm-control label {
+position: absolute;
+top: 15px;
+left:0;
+}
+
+.formm-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition:0.3s cubic-bezier(0.7,-0.6,0.3,1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span{
+color:#999;
+transform: translateY(-30px);
+
+} 
